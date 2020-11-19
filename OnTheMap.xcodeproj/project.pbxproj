@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E127BF7325665F34006DD058 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E127BF7225665F34006DD058 /* Colors.xcassets */; };
 		E1D6D7E12565685B0004F3C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D6D7E02565685B0004F3C0 /* AppDelegate.swift */; };
 		E1D6D7E32565685B0004F3C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D6D7E22565685B0004F3C0 /* SceneDelegate.swift */; };
 		E1D6D7E52565685B0004F3C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D6D7E42565685B0004F3C0 /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E127BF7225665F34006DD058 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		E1D6D7DD2565685B0004F3C0 /* OnTheMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnTheMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1D6D7E02565685B0004F3C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1D6D7E22565685B0004F3C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				E1D6D7E92565685C0004F3C0 /* Assets.xcassets */,
 				E1D6D7E62565685B0004F3C0 /* Main.storyboard */,
 				E1D6D7EB2565685C0004F3C0 /* LaunchScreen.storyboard */,
+				E127BF7225665F34006DD058 /* Colors.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1D6D7ED2565685C0004F3C0 /* LaunchScreen.storyboard in Resources */,
+				E127BF7325665F34006DD058 /* Colors.xcassets in Resources */,
 				E1D6D7EA2565685C0004F3C0 /* Assets.xcassets in Resources */,
 				E1D6D7E82565685B0004F3C0 /* Main.storyboard in Resources */,
 			);
