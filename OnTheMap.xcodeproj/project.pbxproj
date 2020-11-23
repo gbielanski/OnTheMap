@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E127BF7325665F34006DD058 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E127BF7225665F34006DD058 /* Colors.xcassets */; };
+		E199027A256BA5550057931C /* UdacityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1990279256BA5550057931C /* UdacityClient.swift */; };
 		E1D6D7E12565685B0004F3C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D6D7E02565685B0004F3C0 /* AppDelegate.swift */; };
 		E1D6D7E32565685B0004F3C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D6D7E22565685B0004F3C0 /* SceneDelegate.swift */; };
 		E1D6D7E52565685B0004F3C0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D6D7E42565685B0004F3C0 /* LoginViewController.swift */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		E127BF7225665F34006DD058 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		E1990279256BA5550057931C /* UdacityClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityClient.swift; sourceTree = "<group>"; };
 		E1D6D7DD2565685B0004F3C0 /* OnTheMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnTheMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1D6D7E02565685B0004F3C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1D6D7E22565685B0004F3C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,14 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		E1990278256BA5430057931C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E1990279256BA5550057931C /* UdacityClient.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E1D6D7D42565685A0004F3C0 = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +110,7 @@
 		E1D6D7DF2565685B0004F3C0 /* OnTheMap */ = {
 			isa = PBXGroup;
 			children = (
+				E1990278256BA5430057931C /* Model */,
 				E127BF7125665C7C006DD058 /* Assets */,
 				E127BF7025665C58006DD058 /* Controller */,
 				E1D6D7E02565685B0004F3C0 /* AppDelegate.swift */,
@@ -220,6 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E199027A256BA5550057931C /* UdacityClient.swift in Sources */,
 				E1D6D7E52565685B0004F3C0 /* LoginViewController.swift in Sources */,
 				E1D6D7E12565685B0004F3C0 /* AppDelegate.swift in Sources */,
 				E1D6D7E32565685B0004F3C0 /* SceneDelegate.swift in Sources */,
