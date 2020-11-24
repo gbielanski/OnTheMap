@@ -14,12 +14,12 @@ class UdacityClient{
     static let base = "https://onthemap-api.udacity.com/v1"
     
     case createSessionId
-    case getStudentLocation
+    case getStudentLocations
     
     var stringValue : String {
       switch self {
       case .createSessionId: return Endpoints.base + "/session"
-      case .getStudentLocation: return Endpoints.base + "/StudentLocation?limit=10&order=-updatedAt"
+      case .getStudentLocations: return Endpoints.base + "/StudentLocation?limit=10&order=-updatedAt"
       }
     }
     
@@ -27,6 +27,17 @@ class UdacityClient{
       return URL(string: stringValue)!
     }
     
+  }
+
+  class func getStudentLocations(completion: @escaping ([Student], Error?) -> Void) {
+      taskForGETRequest(url: Endpoints.getStudentLocations.url, responseType: StudentLocationsResponse.self){ (response, error)
+          in
+          if let response = response {
+              completion(response.results, nil)
+          }else{
+              completion([], error)
+          }
+      }
   }
   
   class func createSessionId(_ username: String, _ password: String, complation: @escaping (Bool, Error?) -> Void){
