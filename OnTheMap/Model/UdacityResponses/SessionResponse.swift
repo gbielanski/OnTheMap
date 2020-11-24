@@ -30,7 +30,7 @@ struct Account : Codable{
 
 struct Session : Codable{
   let id : String
-  let expiration: Date
+  let expiration: String
 
   enum CodingKeys: String, CodingKey{
     case id
