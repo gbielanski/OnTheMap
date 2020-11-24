@@ -30,8 +30,13 @@ class LoginViewController: UIViewController {
     setLoggIn(true)
     UdacityClient.createSessionId(emailTextField.text ?? "", passwordTextField.text ?? ""){
       (result, error) in
-        print("Result \(result)")
-        self.setLoggIn(false)
+      print("Result \(result)")
+      self.setLoggIn(false)
+      if result {
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "completeLogin", sender: nil)
+        }
+      }
     }
   }
 
