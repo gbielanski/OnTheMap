@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E102D52E256D7F1A0037CB06 /* StudentLocationsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E102D52D256D7F1A0037CB06 /* StudentLocationsResponse.swift */; };
 		E127BF7325665F34006DD058 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E127BF7225665F34006DD058 /* Colors.xcassets */; };
+		E171F307256E438D00C9909E /* StudentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E171F306256E438D00C9909E /* StudentListViewController.swift */; };
 		E199027A256BA5550057931C /* UdacityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1990279256BA5550057931C /* UdacityClient.swift */; };
 		E1990283256BAFF20057931C /* UdacityErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1990282256BAFF20057931C /* UdacityErrorResponse.swift */; };
 		E1990285256BB2EF0057931C /* RequestSessionId.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1990284256BB2EF0057931C /* RequestSessionId.swift */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		E102D52D256D7F1A0037CB06 /* StudentLocationsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocationsResponse.swift; sourceTree = "<group>"; };
 		E127BF7225665F34006DD058 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		E171F306256E438D00C9909E /* StudentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListViewController.swift; sourceTree = "<group>"; };
 		E1990279256BA5550057931C /* UdacityClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityClient.swift; sourceTree = "<group>"; };
 		E1990282256BAFF20057931C /* UdacityErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityErrorResponse.swift; sourceTree = "<group>"; };
 		E1990284256BB2EF0057931C /* RequestSessionId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestSessionId.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				E1D6D7E42565685B0004F3C0 /* LoginViewController.swift */,
+				E171F306256E438D00C9909E /* StudentListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E199027A256BA5550057931C /* UdacityClient.swift in Sources */,
+				E171F307256E438D00C9909E /* StudentListViewController.swift in Sources */,
 				E1D6D7E52565685B0004F3C0 /* LoginViewController.swift in Sources */,
 				E1D6D7E12565685B0004F3C0 /* AppDelegate.swift in Sources */,
 				E102D52E256D7F1A0037CB06 /* StudentLocationsResponse.swift in Sources */,

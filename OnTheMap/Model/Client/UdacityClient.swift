@@ -115,6 +115,7 @@ class UdacityClient{
       let decoder = JSONDecoder()
       do {
         let responseObject = try decoder.decode(ResponseType.self, from: data)
+        print("response \(responseObject)")
         DispatchQueue.main.async {
           completion(responseObject, nil)
         }
