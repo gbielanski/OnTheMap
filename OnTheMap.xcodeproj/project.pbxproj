@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E102D52E256D7F1A0037CB06 /* StudentLocationsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E102D52D256D7F1A0037CB06 /* StudentLocationsResponse.swift */; };
 		E127BF7325665F34006DD058 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E127BF7225665F34006DD058 /* Colors.xcassets */; };
+		E1507E0A256FEE9C0092B3C5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1507E09256FEE9C0092B3C5 /* MapViewController.swift */; };
 		E171F307256E438D00C9909E /* StudentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E171F306256E438D00C9909E /* StudentListViewController.swift */; };
 		E199027A256BA5550057931C /* UdacityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1990279256BA5550057931C /* UdacityClient.swift */; };
 		E1990283256BAFF20057931C /* UdacityErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1990282256BAFF20057931C /* UdacityErrorResponse.swift */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		E102D52D256D7F1A0037CB06 /* StudentLocationsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocationsResponse.swift; sourceTree = "<group>"; };
 		E127BF7225665F34006DD058 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		E1507E09256FEE9C0092B3C5 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E171F306256E438D00C9909E /* StudentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListViewController.swift; sourceTree = "<group>"; };
 		E1990279256BA5550057931C /* UdacityClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityClient.swift; sourceTree = "<group>"; };
 		E1990282256BAFF20057931C /* UdacityErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityErrorResponse.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			children = (
 				E1D6D7E42565685B0004F3C0 /* LoginViewController.swift */,
 				E171F306256E438D00C9909E /* StudentListViewController.swift */,
+				E1507E09256FEE9C0092B3C5 /* MapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1507E0A256FEE9C0092B3C5 /* MapViewController.swift in Sources */,
 				E199027A256BA5550057931C /* UdacityClient.swift in Sources */,
 				E171F307256E438D00C9909E /* StudentListViewController.swift in Sources */,
 				E1D6D7E52565685B0004F3C0 /* LoginViewController.swift in Sources */,

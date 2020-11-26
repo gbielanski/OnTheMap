@@ -19,7 +19,7 @@ class UdacityClient{
     var stringValue : String {
       switch self {
       case .createSessionId: return Endpoints.base + "/session"
-      case .getStudentLocations: return Endpoints.base + "/StudentLocation?limit=10&order=-updatedAt"
+      case .getStudentLocations: return Endpoints.base + "/StudentLocation?limit=100&order=-updatedAt"
       }
     }
     

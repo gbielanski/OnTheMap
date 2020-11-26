@@ -107,7 +107,7 @@
             </objects>
             <point key="canvasLocation" x="913" y="126"/>
         </scene>
-        <!--List of Students-->
+        <!--On The Map-->
         <scene sceneID="SWt-YU-S4S">
             <objects>
                 <tableViewController id="Vcc-8c-GqG" customClass="StudentListViewController" customModule="OnTheMap" sceneMemberID="viewController">
@@ -131,7 +131,7 @@
                             <outlet property="delegate" destination="Vcc-8c-GqG" id="5Qd-c9-4o2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="List of Students" id="L93-Ma-62g"/>
+                    <navigationItem key="navigationItem" title="On The Map" id="L93-Ma-62g"/>
                     <connections>
                         <outlet property="tableView" destination="K2F-vb-Z4P" id="FOW-1z-ynf"/>
                     </connections>
@@ -157,35 +157,6 @@
             </objects>
             <point key="canvasLocation" x="1851" y="406"/>
         </scene>
-        <!--Map of Students-->
-        <scene sceneID="mea-db-K6t">
-            <objects>
-                <tableViewController id="IYI-4A-X8u" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="JHb-Eb-A94">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="u0G-ns-JGx">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u0G-ns-JGx" id="Hlx-sF-heL">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="IYI-4A-X8u" id="b0t-1L-Qwe"/>
-                            <outlet property="delegate" destination="IYI-4A-X8u" id="o3x-B9-Tcc"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Map of Students" id="fKL-Bs-gm4"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lYk-x4-Ix2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2770" y="-300"/>
-        </scene>
         <!--Map-->
         <scene sceneID="hOH-gi-GcU">
             <objects>
@@ -196,12 +167,39 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="IYI-4A-X8u" kind="relationship" relationship="rootViewController" id="0iy-wj-2qO"/>
+                        <segue destination="jqF-XJ-082" kind="relationship" relationship="rootViewController" id="yWU-M8-Ias"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xbf-uB-fTF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1851" y="-300"/>
+        </scene>
+        <!--On The Map-->
+        <scene sceneID="FnP-k0-hBo">
+            <objects>
+                <viewController id="jqF-XJ-082" customClass="MapViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vTc-Pu-MXI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="M1z-dS-1DN">
+                                <rect key="frame" x="0.0" y="56" width="414" height="703"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="M1z-dS-1DN" firstAttribute="leading" secondItem="tNl-06-GNF" secondAttribute="leading" id="IC8-EE-8lF"/>
+                            <constraint firstItem="M1z-dS-1DN" firstAttribute="top" secondItem="tNl-06-GNF" secondAttribute="top" id="JzL-R4-xjg"/>
+                            <constraint firstItem="tNl-06-GNF" firstAttribute="trailing" secondItem="M1z-dS-1DN" secondAttribute="trailing" id="jZu-GX-oSn"/>
+                            <constraint firstItem="tNl-06-GNF" firstAttribute="bottom" secondItem="M1z-dS-1DN" secondAttribute="bottom" id="jv7-W6-9JC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tNl-06-GNF"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="On The Map" id="KvG-rV-edU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GYH-R3-Zcl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2678" y="-300"/>
         </scene>
     </scenes>
     <resources>
@@ -209,7 +207,7 @@
         <image name="icon_mapview-deselected" width="75" height="50"/>
         <image name="logo-u" width="62" height="62"/>
         <namedColor name="PrimaryLight">
-            <color red="0.46299999952316284" green="0.83899998664855957" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.34499999999999997" green="0.83899998664855957" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
