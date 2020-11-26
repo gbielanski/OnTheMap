@@ -184,6 +184,9 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="M1z-dS-1DN">
                                 <rect key="frame" x="0.0" y="56" width="414" height="703"/>
+                                <connections>
+                                    <outlet property="delegate" destination="jqF-XJ-082" id="Ist-lo-S0T"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -210,7 +213,7 @@
         <image name="icon_mapview-deselected" width="75" height="50"/>
         <image name="logo-u" width="62" height="62"/>
         <namedColor name="PrimaryLight">
-            <color red="0.34499999999999997" green="0.83899998664855957" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.3449999988079071" green="0.83899998664855957" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
