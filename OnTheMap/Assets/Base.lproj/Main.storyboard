@@ -153,7 +153,7 @@
             </objects>
             <point key="canvasLocation" x="1851" y="406"/>
         </scene>
-        <!--View Controller 1-->
+        <!--Map of Students-->
         <scene sceneID="mea-db-K6t">
             <objects>
                 <tableViewController id="IYI-4A-X8u" sceneMemberID="viewController">
@@ -176,17 +176,17 @@
                             <outlet property="delegate" destination="IYI-4A-X8u" id="o3x-B9-Tcc"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="View Controller 1" id="fKL-Bs-gm4"/>
+                    <navigationItem key="navigationItem" title="Map of Students" id="fKL-Bs-gm4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lYk-x4-Ix2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2770" y="-300"/>
         </scene>
-        <!--Item 1-->
+        <!--Map-->
         <scene sceneID="hOH-gi-GcU">
             <objects>
                 <navigationController id="Oho-mx-3xj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="QNL-2H-Xfu"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="icon_mapview-deselected" id="QNL-2H-Xfu"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Gn3-ib-m7C">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -202,6 +202,7 @@
     </scenes>
     <resources>
         <image name="icon_listview-deselected" width="75" height="50"/>
+        <image name="icon_mapview-deselected" width="75" height="50"/>
         <image name="logo-u" width="62" height="62"/>
     </resources>
 </document>
