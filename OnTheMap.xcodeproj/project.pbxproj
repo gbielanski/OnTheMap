@@ -21,6 +21,7 @@
 		E1D6D7EA2565685C0004F3C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1D6D7E92565685C0004F3C0 /* Assets.xcassets */; };
 		E1D6D7ED2565685C0004F3C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1D6D7EB2565685C0004F3C0 /* LaunchScreen.storyboard */; };
 		E1D6D7F82565685C0004F3C0 /* OnTheMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D6D7F72565685C0004F3C0 /* OnTheMapTests.swift */; };
+		E1FA2727256F9B3500F858C5 /* StudentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FA2726256F9B3500F858C5 /* StudentModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		E1D6D7F32565685C0004F3C0 /* OnTheMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnTheMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1D6D7F72565685C0004F3C0 /* OnTheMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTheMapTests.swift; sourceTree = "<group>"; };
 		E1D6D7F92565685C0004F3C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1FA2726256F9B3500F858C5 /* StudentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		E1990278256BA5430057931C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E1FA2725256F9B2200F858C5 /* Data */,
 				E1990288256BB6730057931C /* Client */,
 				E1990281256BAFD10057931C /* UdacityResponses */,
 				E1990280256BAFBD0057931C /* UdacityRequests */,
@@ -166,6 +169,14 @@
 				E1D6D7F92565685C0004F3C0 /* Info.plist */,
 			);
 			path = OnTheMapTests;
+			sourceTree = "<group>";
+		};
+		E1FA2725256F9B2200F858C5 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E1FA2726256F9B3500F858C5 /* StudentModel.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +284,7 @@
 				E199027A256BA5550057931C /* UdacityClient.swift in Sources */,
 				E171F307256E438D00C9909E /* StudentListViewController.swift in Sources */,
 				E1D6D7E52565685B0004F3C0 /* LoginViewController.swift in Sources */,
+				E1FA2727256F9B3500F858C5 /* StudentModel.swift in Sources */,
 				E1D6D7E12565685B0004F3C0 /* AppDelegate.swift in Sources */,
 				E102D52E256D7F1A0037CB06 /* StudentLocationsResponse.swift in Sources */,
 				E1990287256BB51E0057931C /* SessionResponse.swift in Sources */,

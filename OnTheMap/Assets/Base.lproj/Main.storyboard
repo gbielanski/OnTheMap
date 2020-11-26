@@ -103,7 +103,7 @@
             </objects>
             <point key="canvasLocation" x="913" y="126"/>
         </scene>
-        <!--View Controller 2-->
+        <!--List of Students-->
         <scene sceneID="SWt-YU-S4S">
             <objects>
                 <tableViewController id="Vcc-8c-GqG" customClass="StudentListViewController" customModule="OnTheMap" sceneMemberID="viewController">
@@ -112,12 +112,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StudentTableViewCell" id="hor-Nb-SHg">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StudentTableViewCell" id="hor-Nb-SHg">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hor-Nb-SHg" id="v25-d8-QR9">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -126,7 +127,10 @@
                             <outlet property="delegate" destination="Vcc-8c-GqG" id="5Qd-c9-4o2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="View Controller 2" id="L93-Ma-62g"/>
+                    <navigationItem key="navigationItem" title="List of Students" id="L93-Ma-62g"/>
+                    <connections>
+                        <outlet property="tableView" destination="K2F-vb-Z4P" id="FOW-1z-ynf"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="quy-uC-yIx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
