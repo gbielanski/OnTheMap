@@ -136,11 +136,11 @@
             </objects>
             <point key="canvasLocation" x="2770" y="406"/>
         </scene>
-        <!--Item 2-->
+        <!--List-->
         <scene sceneID="NS4-st-Fol">
             <objects>
                 <navigationController id="Agz-3R-7pc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="Vrm-q5-2jE"/>
+                    <tabBarItem key="tabBarItem" title="List" image="icon_listview-deselected" id="Vrm-q5-2jE"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f5v-WJ-s1e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -201,6 +201,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon_listview-deselected" width="75" height="50"/>
         <image name="logo-u" width="62" height="62"/>
     </resources>
 </document>

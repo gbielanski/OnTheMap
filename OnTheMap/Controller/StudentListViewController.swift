@@ -53,6 +53,13 @@ extension StudentListViewController: UITableViewDataSource, UITableViewDelegate 
     return cell
   }
 
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let urlString = StudentModel.studentlist[indexPath.row].mediaURL
+    if let url = URL(string: urlString.withUrlSchema()) {
+      UIApplication.shared.open(url)
+    }
+    tableView.deselectRow(at: indexPath, animated: true)
+  }
 
   func numberOfSections(in tableView: UITableView) -> Int {
     return 1
@@ -65,6 +72,14 @@ extension String {
       return "Unknown"
     }else{
       return self
+    }
+  }
+
+  func withUrlSchema() -> String{
+    if self.starts(with: "http"){
+      return self
+    }else {
+      return "\("https://")\(self)"
     }
   }
 }
