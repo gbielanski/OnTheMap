@@ -23,26 +23,26 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On The Map" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygN-tb-2Uf">
-                                <rect key="frame" x="112.5" y="220" width="189.5" height="152"/>
+                                <rect key="frame" x="112.5" y="220" width="189.5" height="122"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jYB-A4-ezM">
-                                <rect key="frame" x="32" y="388" width="350" height="120"/>
+                                <rect key="frame" x="32" y="358" width="350" height="180"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rpd-FU-coB">
-                                        <rect key="frame" x="0.0" y="0.0" width="350" height="34.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="39"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HeA-aR-2bo">
-                                        <rect key="frame" x="0.0" y="42.5" width="350" height="35"/>
+                                        <rect key="frame" x="0.0" y="47" width="350" height="39"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGe-0h-IDp">
-                                        <rect key="frame" x="0.0" y="85.5" width="350" height="34.5"/>
+                                        <rect key="frame" x="0.0" y="94" width="350" height="39"/>
                                         <color key="backgroundColor" name="PrimaryLight"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="LOGIN"/>
@@ -50,13 +50,23 @@
                                             <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vjD-2t-44f"/>
                                         </connections>
                                     </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Don't have an account. Sign up" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="Dfa-GU-zu4">
+                                        <rect key="frame" x="0.0" y="141" width="350" height="39"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" link="YES" staticText="YES" notEnabled="YES"/>
+                                        </accessibility>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="Bbr-qb-0T6"/>
+                                    <constraint firstAttribute="height" constant="180" id="Bbr-qb-0T6"/>
                                 </constraints>
                             </stackView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="wGH-t9-Jaj">
-                                <rect key="frame" x="188.5" y="572" width="37" height="37"/>
+                                <rect key="frame" x="188.5" y="602" width="37" height="37"/>
                                 <color key="color" name="PrimaryLight"/>
                             </activityIndicatorView>
                         </subviews>
@@ -81,6 +91,7 @@
                         <outlet property="emailTextField" destination="rpd-FU-coB" id="ZBw-gq-lMJ"/>
                         <outlet property="loginButton" destination="DGe-0h-IDp" id="PgB-Im-ndG"/>
                         <outlet property="passwordTextField" destination="HeA-aR-2bo" id="F9p-Qv-Fjf"/>
+                        <outlet property="textView" destination="Dfa-GU-zu4" id="nnR-Bz-aOV"/>
                         <segue destination="Agd-c0-orQ" kind="show" identifier="completeLogin" id="2Ne-dg-TpC"/>
                     </connections>
                 </viewController>
