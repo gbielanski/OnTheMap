@@ -126,9 +126,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <activityIndicatorView key="tableHeaderView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" id="vP0-oi-tUs">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="color" name="PrimaryLight"/>
+                        </activityIndicatorView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StudentTableViewCell" id="hor-Nb-SHg">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hor-Nb-SHg" id="v25-d8-QR9">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -142,8 +147,18 @@
                             <outlet property="delegate" destination="Vcc-8c-GqG" id="5Qd-c9-4o2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="On The Map" id="L93-Ma-62g"/>
+                    <navigationItem key="navigationItem" title="On The Map" id="L93-Ma-62g">
+                        <rightBarButtonItems>
+                            <barButtonItem image="icon_addpin" id="ty5-Ea-eH6" userLabel="Add"/>
+                            <barButtonItem image="icon_refresh" id="TLp-oa-z6m" userLabel="Refresh">
+                                <connections>
+                                    <action selector="refresh" destination="Vcc-8c-GqG" id="yvC-5e-ga6"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="vP0-oi-tUs" id="tEd-Dy-kih"/>
                         <outlet property="tableView" destination="K2F-vb-Z4P" id="FOW-1z-ynf"/>
                     </connections>
                 </tableViewController>
@@ -199,18 +214,34 @@
                                     <outlet property="delegate" destination="jqF-XJ-082" id="Ist-lo-S0T"/>
                                 </connections>
                             </mapView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="35Z-vD-ZfH">
+                                <rect key="frame" x="188.5" y="389" width="37" height="37"/>
+                                <color key="color" name="PrimaryLight"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="M1z-dS-1DN" firstAttribute="leading" secondItem="tNl-06-GNF" secondAttribute="leading" id="IC8-EE-8lF"/>
                             <constraint firstItem="M1z-dS-1DN" firstAttribute="top" secondItem="tNl-06-GNF" secondAttribute="top" id="JzL-R4-xjg"/>
+                            <constraint firstItem="35Z-vD-ZfH" firstAttribute="centerY" secondItem="tNl-06-GNF" secondAttribute="centerY" id="Z1J-pn-GIX"/>
+                            <constraint firstItem="35Z-vD-ZfH" firstAttribute="centerX" secondItem="tNl-06-GNF" secondAttribute="centerX" id="aeW-2p-GUe"/>
                             <constraint firstItem="tNl-06-GNF" firstAttribute="trailing" secondItem="M1z-dS-1DN" secondAttribute="trailing" id="jZu-GX-oSn"/>
                             <constraint firstItem="tNl-06-GNF" firstAttribute="bottom" secondItem="M1z-dS-1DN" secondAttribute="bottom" id="jv7-W6-9JC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tNl-06-GNF"/>
                     </view>
-                    <navigationItem key="navigationItem" title="On The Map" id="KvG-rV-edU"/>
+                    <navigationItem key="navigationItem" title="On The Map" id="KvG-rV-edU">
+                        <rightBarButtonItems>
+                            <barButtonItem image="icon_addpin" id="QIw-w2-EWq" userLabel="Add"/>
+                            <barButtonItem image="icon_refresh" id="WDa-H1-K0g" userLabel="Refresh">
+                                <connections>
+                                    <action selector="refresh" destination="jqF-XJ-082" id="8bc-bO-eq2"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="35Z-vD-ZfH" id="08j-Mx-FJg"/>
                         <outlet property="mapView" destination="M1z-dS-1DN" id="SqE-7F-QCT"/>
                     </connections>
                 </viewController>
@@ -220,8 +251,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon_addpin" width="24" height="24"/>
         <image name="icon_listview-deselected" width="75" height="50"/>
         <image name="icon_mapview-deselected" width="75" height="50"/>
+        <image name="icon_refresh" width="24" height="24"/>
         <image name="logo-u" width="62" height="62"/>
         <namedColor name="PrimaryLight">
             <color red="0.3449999988079071" green="0.83899998664855957" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

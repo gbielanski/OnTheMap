@@ -11,6 +11,7 @@ import MapKit
 
 class MapViewController: UIViewController, MKMapViewDelegate {
   @IBOutlet weak var mapView: MKMapView!
+  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -80,6 +81,23 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
     
     self.mapView.addAnnotations(annotations)
+  }
+
+  @IBAction func refresh(){
+    setResfreshing(true)
+    _ = UdacityClient.getStudentLocations { students, error in
+      StudentModel.studentlist = students
+      self.updateMap()
+      self.setResfreshing(false)
+    }
+  }
+
+  private func setResfreshing(_ login: Bool){
+    if login {
+      activityIndicator.startAnimating()
+    }else{
+      activityIndicator.stopAnimating()
+    }
   }
   
 }

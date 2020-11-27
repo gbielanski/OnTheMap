@@ -13,9 +13,33 @@ import UIKit
 class StudentListViewController: UIViewController {
 
   @IBOutlet var tableView: UITableView!
+  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+  //
+//  override func viewDidLoad() {
+//    super.viewDidLoad()
+//    updateTable()
+//  }
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+
+    tableView.reloadData()
+  }
+
+  @IBAction func refresh(){
+    updateTable()
+  }
+
+  private func setResfreshing(_ login: Bool){
+    if login {
+      activityIndicator.startAnimating()
+    }else{
+      activityIndicator.stopAnimating()
+    }
+  }
+
+  private func updateTable(){
+    setResfreshing(true)
     _ = UdacityClient.getStudentLocations { students, error in
       StudentModel.studentlist = students
       print(students)
@@ -24,14 +48,8 @@ class StudentListViewController: UIViewController {
       }
 
       self.tableView.reloadData()
+      self.setResfreshing(false)
     }
-
-  }
-
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-
-    tableView.reloadData()
   }
 
 }
