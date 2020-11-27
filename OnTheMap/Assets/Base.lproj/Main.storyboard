@@ -260,7 +260,7 @@
         <!--Add Location-->
         <scene sceneID="fRW-kG-Bth">
             <objects>
-                <viewController id="EH1-e3-81V" sceneMemberID="viewController">
+                <viewController id="EH1-e3-81V" customClass="FindLocationViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gID-xq-O5E">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -290,7 +290,7 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="FIND LOCATION"/>
                                         <connections>
-                                            <segue destination="eBE-pg-4pz" kind="show" id="Vmg-RT-z0t"/>
+                                            <action selector="findLocationButtonTapped" destination="EH1-e3-81V" eventType="touchUpInside" id="nEz-tr-WML"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -311,15 +311,20 @@
                         <viewLayoutGuide key="safeArea" id="kdR-Dr-MHp"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Location" id="VKW-IE-bMn"/>
+                    <connections>
+                        <outlet property="linkTextView" destination="N2o-z8-iaK" id="6NX-IU-APC"/>
+                        <outlet property="locationTextView" destination="CtW-qW-Mwi" id="i80-5r-sdX"/>
+                        <segue destination="eBE-pg-4pz" kind="show" identifier="finishLocation" id="1LW-iK-IPd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yPn-dt-5zF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3749" y="57"/>
         </scene>
-        <!--View Controller-->
+        <!--Finish Location View Controller-->
         <scene sceneID="7Sc-xa-9N5">
             <objects>
-                <viewController id="eBE-pg-4pz" sceneMemberID="viewController">
+                <viewController id="eBE-pg-4pz" customClass="FinishLocationViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kv3-vi-eVN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -334,7 +339,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ndg-Rx-mFZ"/>
+        <segue reference="HfI-Fg-0Gx"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="icon_addpin" width="24" height="24"/>
