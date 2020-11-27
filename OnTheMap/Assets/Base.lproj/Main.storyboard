@@ -319,7 +319,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yPn-dt-5zF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3749" y="57"/>
+            <point key="canvasLocation" x="3620" y="57"/>
         </scene>
         <!--Finish Location View Controller-->
         <scene sceneID="7Sc-xa-9N5">
@@ -328,14 +328,40 @@
                     <view key="view" contentMode="scaleToFill" id="Kv3-vi-eVN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5WB-oE-y7S">
+                                <rect key="frame" x="0.0" y="56" width="414" height="703"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5F-rU-Zi5">
+                                <rect key="frame" x="32" y="677" width="350" height="50"/>
+                                <color key="backgroundColor" name="PrimaryLight"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="b5F-rU-Zi5" secondAttribute="height" multiplier="35:5" id="XN2-6r-5yq"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="FINISH"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bXX-Tb-824" firstAttribute="trailing" secondItem="b5F-rU-Zi5" secondAttribute="trailing" constant="32" id="7mY-R5-xoz"/>
+                            <constraint firstItem="bXX-Tb-824" firstAttribute="bottom" secondItem="5WB-oE-y7S" secondAttribute="bottom" id="IMJ-iw-wn7"/>
+                            <constraint firstItem="b5F-rU-Zi5" firstAttribute="leading" secondItem="bXX-Tb-824" secondAttribute="leading" constant="32" id="Ki7-FM-GW9"/>
+                            <constraint firstItem="5WB-oE-y7S" firstAttribute="top" secondItem="bXX-Tb-824" secondAttribute="top" id="SY5-Yz-zLq"/>
+                            <constraint firstItem="bXX-Tb-824" firstAttribute="bottom" secondItem="b5F-rU-Zi5" secondAttribute="bottom" constant="32" id="Var-ZB-2SU"/>
+                            <constraint firstItem="bXX-Tb-824" firstAttribute="trailing" secondItem="5WB-oE-y7S" secondAttribute="trailing" id="VuA-3J-NWM"/>
+                            <constraint firstItem="5WB-oE-y7S" firstAttribute="leading" secondItem="bXX-Tb-824" secondAttribute="leading" id="Y2j-pv-hcN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bXX-Tb-824"/>
                     </view>
                     <navigationItem key="navigationItem" id="OvL-TM-oQh"/>
+                    <connections>
+                        <outlet property="mapView" destination="5WB-oE-y7S" id="eAv-5R-MtP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UHC-4T-LSx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4510" y="57"/>
+            <point key="canvasLocation" x="4367" y="57"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

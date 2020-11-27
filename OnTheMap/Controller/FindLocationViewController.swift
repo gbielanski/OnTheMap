@@ -37,7 +37,7 @@ class FindLocationViewController: UIViewController {
   private func findLocation(location: String){
     CLGeocoder().geocodeAddressString(location) { (marker, error) in
       if let error = error {
-        self.showFailure(message: "Could not find location")
+        self.showFailure(message: error.localizedDescription)
       } else {
         var location: CLLocation?
 

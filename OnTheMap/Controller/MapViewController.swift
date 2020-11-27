@@ -20,7 +20,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
       self.updateMap()
       self.centerMap()
     }
-    
   }
   
   private func centerMap() {
