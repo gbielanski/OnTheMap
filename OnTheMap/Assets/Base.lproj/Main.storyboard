@@ -149,6 +149,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="On The Map" id="L93-Ma-62g">
                         <barButtonItem key="backBarButtonItem" title="Cancell" id="ea0-IH-4nw"/>
+                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="RtL-5O-LNd"/>
                         <rightBarButtonItems>
                             <barButtonItem image="icon_addpin" id="ty5-Ea-eH6" userLabel="Add">
                                 <connections>
@@ -237,6 +238,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="On The Map" id="KvG-rV-edU">
                         <barButtonItem key="backBarButtonItem" title="Cancell" id="ItA-SD-Qcw"/>
+                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="e1X-Af-HhT"/>
                         <rightBarButtonItems>
                             <barButtonItem image="icon_addpin" id="QIw-w2-EWq" userLabel="Add">
                                 <connections>
@@ -375,7 +377,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="HfI-Fg-0Gx"/>
+        <segue reference="Ndg-Rx-mFZ"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="icon_addpin" width="24" height="24"/>
