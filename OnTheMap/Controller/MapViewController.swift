@@ -31,7 +31,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     let centerLocation = CLLocation(
       latitude: CLLocationDegrees(StudentModel.studentlist[0].latitude),
       longitude: CLLocationDegrees(StudentModel.studentlist[0].longitude))
-    let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+    let span = MKCoordinateSpan(latitudeDelta: 50.0, longitudeDelta: 50.0)
     let region = MKCoordinateRegion(center: centerLocation.coordinate, span: span)
     mapView.setRegion(region, animated: false)
   }
