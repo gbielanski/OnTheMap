@@ -10,7 +10,7 @@ import Foundation
 
 class StudentLocationsResponse : Codable {
 
-  let results: [Student]
+  let results: [StudentInformation]
 
   enum CodingKeys: String, CodingKey{
     case results
@@ -18,7 +18,7 @@ class StudentLocationsResponse : Codable {
 }
 
 
-class Student : Codable{
+class StudentInformation : Codable{
   let firstName: String
   let lastName: String
   let longitude: Float

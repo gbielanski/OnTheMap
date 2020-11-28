@@ -29,7 +29,7 @@ class UdacityClient{
     
   }
 
-  class func getStudentLocations(completion: @escaping ([Student], Error?) -> Void) {
+  class func getStudentLocations(completion: @escaping ([StudentInformation], Error?) -> Void) {
       taskForGETRequest(url: Endpoints.getStudentLocations.url, responseType: StudentLocationsResponse.self){ (response, error)
           in
           if let response = response {
