@@ -14,15 +14,10 @@ class StudentListViewController: UIViewController {
 
   @IBOutlet var tableView: UITableView!
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-  //
-//  override func viewDidLoad() {
-//    super.viewDidLoad()
-//    updateTable()
-//  }
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-
+    self.tabBarController?.tabBar.isHidden = false
     tableView.reloadData()
   }
 

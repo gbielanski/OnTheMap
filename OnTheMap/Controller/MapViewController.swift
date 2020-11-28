@@ -21,6 +21,11 @@ class MapViewController: UIViewController, MKMapViewDelegate {
       self.centerMap()
     }
   }
+
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    self.tabBarController?.tabBar.isHidden = false
+  }
   
   private func centerMap() {
     let centerLocation = CLLocation(
