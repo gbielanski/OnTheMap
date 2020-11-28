@@ -27,9 +27,19 @@ class FinishLocationViewController: UIViewController, MKMapViewDelegate {
     annotation.coordinate = location!.coordinate
     let geocoder = CLGeocoder()
     geocoder.reverseGeocodeLocation (location!, completionHandler: { (placemarks, error) in
+      if let error = error {
+        self.showFailure(message: error.localizedDescription)
+        return
+      }
+
       let firstLocation = placemarks?[0]
 
-      annotation.title = "\(firstLocation!.subLocality!.description), \(firstLocation!.administrativeArea!.description), \(firstLocation!.isoCountryCode!)"
+      if firstLocation == nil {
+        self.showFailure(message: "Cannot find location to show")
+        return
+      }
+
+      annotation.title = "\(firstLocation?.subLocality?.description ?? "Unknown"), \(firstLocation?.administrativeArea?.description ?? "Unknown"), \(firstLocation?.isoCountryCode! ?? "Unknown")"
       annotations.append(annotation)
       self.mapView.addAnnotations(annotations)
     })
@@ -39,5 +49,11 @@ class FinishLocationViewController: UIViewController, MKMapViewDelegate {
     let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
     let region = MKCoordinateRegion(center: location!.coordinate, span: span)
     mapView.setRegion(region, animated: false)
+  }
+
+  private func showFailure(message: String) {
+    let alertVC = UIAlertController(title: "Finish Location Failed", message: message, preferredStyle: .alert)
+    alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+    present(alertVC, animated: true, completion: nil)
   }
 }
