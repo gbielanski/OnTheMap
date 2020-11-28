@@ -148,6 +148,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="On The Map" id="L93-Ma-62g">
+                        <barButtonItem key="backBarButtonItem" title="Cancell" id="ea0-IH-4nw"/>
                         <rightBarButtonItems>
                             <barButtonItem image="icon_addpin" id="ty5-Ea-eH6" userLabel="Add">
                                 <connections>
@@ -235,6 +236,7 @@
                         <viewLayoutGuide key="safeArea" id="tNl-06-GNF"/>
                     </view>
                     <navigationItem key="navigationItem" title="On The Map" id="KvG-rV-edU">
+                        <barButtonItem key="backBarButtonItem" title="Cancell" id="ItA-SD-Qcw"/>
                         <rightBarButtonItems>
                             <barButtonItem image="icon_addpin" id="QIw-w2-EWq" userLabel="Add">
                                 <connections>
@@ -310,7 +312,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kdR-Dr-MHp"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Location" id="VKW-IE-bMn"/>
+                    <navigationItem key="navigationItem" title="Add Location" id="VKW-IE-bMn">
+                        <barButtonItem key="backBarButtonItem" title="Cancell" id="ee7-P5-A9g"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="linkTextView" destination="N2o-z8-iaK" id="6NX-IU-APC"/>
                         <outlet property="locationTextView" destination="CtW-qW-Mwi" id="i80-5r-sdX"/>
@@ -331,6 +335,9 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5WB-oE-y7S">
                                 <rect key="frame" x="0.0" y="56" width="414" height="703"/>
+                                <connections>
+                                    <outlet property="delegate" destination="eBE-pg-4pz" id="otz-sX-E5X"/>
+                                </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5F-rU-Zi5">
                                 <rect key="frame" x="32" y="677" width="350" height="50"/>
