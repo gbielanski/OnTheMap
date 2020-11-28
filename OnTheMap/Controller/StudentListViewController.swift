@@ -37,10 +37,6 @@ class StudentListViewController: UIViewController {
     setResfreshing(true)
     _ = UdacityClient.getStudentLocations { students, error in
       StudentModel.studentlist = students
-      print(students)
-      for s in students {
-        print(s.firstName)
-      }
 
       self.tableView.reloadData()
       self.setResfreshing(false)

@@ -41,7 +41,6 @@ class LoginViewController: UIViewController, UITextViewDelegate {
     setLoggIn(true)
     UdacityClient.createSessionId(emailTextField.text ?? "", passwordTextField.text ?? ""){
       (result, error) in
-      print("Result \(result)")
       self.setLoggIn(false)
       if result {
         DispatchQueue.main.async {
@@ -73,7 +72,6 @@ class LoginViewController: UIViewController, UITextViewDelegate {
   }
 
   func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
-    print("textView")
       UIApplication.shared.open(URL)
       return false
   }

@@ -37,7 +37,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
   }
   
   func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-    print("mapView")
     
     let reuseId = "pin"
     
@@ -57,7 +56,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
   }
   
   func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-    print("mapVIewTapped")
     if control == view.rightCalloutAccessoryView {
       let app = UIApplication.shared
       if let toOpen = view.annotation?.subtitle! {

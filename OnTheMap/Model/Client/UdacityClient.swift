@@ -46,7 +46,6 @@ class UdacityClient{
       in
       
       if let response = response {
-        print(response.account.registered)
         complation(true, nil)
       }else{
         complation(false, error)
@@ -73,27 +72,22 @@ class UdacityClient{
       
       let range = 5..<data.count
       let newData = data.subdata(in: range)
-      print(String(data: newData, encoding: .utf8)!)
-      
+
       let decoder = JSONDecoder()
       
       do {
         
         let response = try decoder.decode(ResponseType.self, from: newData)
-        print("response \(response)")
         DispatchQueue.main.async {
           completion(response , nil)
         }
       } catch {
         do {
-          print("error \(error.localizedDescription)")
           let errorResponse = try decoder.decode(UdacityErrorResponse.self, from: newData)
-          print("error response")
           DispatchQueue.main.async {
             completion(nil, errorResponse)
           }
         }catch{
-          print("error error response")
           DispatchQueue.main.async {
             completion(nil, error)
           }
@@ -115,13 +109,11 @@ class UdacityClient{
       let decoder = JSONDecoder()
       do {
         let responseObject = try decoder.decode(ResponseType.self, from: data)
-        print("response \(responseObject)")
         DispatchQueue.main.async {
           completion(responseObject, nil)
         }
       } catch {
         do {
-          print("errorResponse")
           let errorResponse = try decoder.decode(UdacityErrorResponse.self, from: data)
           DispatchQueue.main.async {
             completion(nil, errorResponse)

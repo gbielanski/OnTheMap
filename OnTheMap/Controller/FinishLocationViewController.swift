@@ -31,7 +31,6 @@ class FinishLocationViewController: UIViewController, MKMapViewDelegate {
   }
   
   func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-    print("mapView")
     
     let reuseId = "pin"
     
