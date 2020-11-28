@@ -39,16 +39,25 @@ class LoginViewController: UIViewController, UITextViewDelegate {
   
   @IBAction func loginTapped(_ sender: Any) {
     setLoggIn(true)
-    UdacityClient.createSessionId(emailTextField.text ?? "", passwordTextField.text ?? ""){
-      (result, error) in
-      self.setLoggIn(false)
-      if result {
-        DispatchQueue.main.async {
-          self.performSegue(withIdentifier: "completeLogin", sender: nil)
-        }
-      }else {
-        self.showLoginFailure(message: error?.localizedDescription ?? "")
+    UdacityClient.createSessionId(emailTextField.text ?? "", passwordTextField.text ?? "", complation: handleSessionId)
+  }
+
+  private func handleSessionId(result: Bool, error: Error?){
+    if result {
+      UdacityClient.getStudentInfo (completion: handleGetStudentInfo)
+    }else {
+      self.showLoginFailure(message: error?.localizedDescription ?? "")
+    }
+  }
+
+  private func handleGetStudentInfo(result: Bool, error: Error?){
+    if result {
+      DispatchQueue.main.async {
+        self.setLoggIn(false)
+        self.performSegue(withIdentifier: "completeLogin", sender: nil)
       }
+    } else {
+      self.showLoginFailure(message: error?.localizedDescription ?? "")
     }
   }
   
@@ -65,15 +74,16 @@ class LoginViewController: UIViewController, UITextViewDelegate {
   }
   
   func showLoginFailure(message: String) {
+    setLoggIn(false)
     let alertVC = UIAlertController(title: "Login Failed", message: message, preferredStyle: .alert)
     alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-      //show(alertVC, sender: nil)
+    //show(alertVC, sender: nil)
     present(alertVC, animated: true, completion: nil)
   }
 
   func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
-      UIApplication.shared.open(URL)
-      return false
+    UIApplication.shared.open(URL)
+    return false
   }
   
 }

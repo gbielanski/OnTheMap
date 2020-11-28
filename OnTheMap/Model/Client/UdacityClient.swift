@@ -14,11 +14,13 @@ class UdacityClient{
     static let base = "https://onthemap-api.udacity.com/v1"
     
     case createSessionId
+    case getStudentDetails(String)
     case getStudentLocations
-    
+
     var stringValue : String {
       switch self {
       case .createSessionId: return Endpoints.base + "/session"
+      case .getStudentDetails(let key): return Endpoints.base + "/users/\(key)"
       case .getStudentLocations: return Endpoints.base + "/StudentLocation?limit=100&order=-updatedAt"
       }
     }
@@ -30,14 +32,27 @@ class UdacityClient{
   }
 
   class func getStudentLocations(completion: @escaping ([StudentInformation], Error?) -> Void) {
-      taskForGETRequest(url: Endpoints.getStudentLocations.url, responseType: StudentLocationsResponse.self){ (response, error)
-          in
-          if let response = response {
-              completion(response.results, nil)
-          }else{
-              completion([], error)
-          }
+    taskForGETRequest(url: Endpoints.getStudentLocations.url, responseType: StudentLocationsResponse.self){ (response, error)
+      in
+      if let response = response {
+        completion(response.results, nil)
+      }else{
+        completion([], error)
       }
+    }
+  }
+
+  class func getStudentInfo(completion: @escaping (Bool, Error?) -> Void) {
+    taskForGETRequest(url: Endpoints.getStudentDetails(Auth.key).url, responseType: UserProfile.self){ (response, error)
+      in
+      if let response = response {
+        Auth.firstName = response.firstName
+        Auth.lastName = response.lastName
+        completion(true, nil)
+      }else{
+        completion(false, error)
+      }
+    }
   }
   
   class func createSessionId(_ username: String, _ password: String, complation: @escaping (Bool, Error?) -> Void){
@@ -46,6 +61,8 @@ class UdacityClient{
       in
       
       if let response = response {
+        Auth.key = response.account.key
+        Auth.session = response.session.id
         complation(true, nil)
       }else{
         complation(false, error)
@@ -108,7 +125,13 @@ class UdacityClient{
       }
       let decoder = JSONDecoder()
       do {
-        let responseObject = try decoder.decode(ResponseType.self, from: data)
+        var newData = data
+        if (responseType is UserProfile.Type){
+          let range = 5..<data.count
+          newData = data.subdata(in: range)
+        }
+        let responseObject = try decoder.decode(ResponseType.self, from: newData)
+
         DispatchQueue.main.async {
           completion(responseObject, nil)
         }
