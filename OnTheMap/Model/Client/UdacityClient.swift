@@ -16,10 +16,11 @@ class UdacityClient{
     case createSessionId
     case getStudentDetails(String)
     case getStudentLocations
+    case deleteSession
 
     var stringValue : String {
       switch self {
-      case .createSessionId: return Endpoints.base + "/session"
+      case .createSessionId, .deleteSession: return Endpoints.base + "/session"
       case .getStudentDetails(let key): return Endpoints.base + "/users/\(key)"
       case .getStudentLocations: return Endpoints.base + "/StudentLocation?limit=100&order=-updatedAt"
       }
@@ -68,6 +69,35 @@ class UdacityClient{
         complation(false, error)
       }
     }
+  }
+
+  class func logout (complation: @escaping (Bool, Error?) -> Void){
+    var request = URLRequest(url: Endpoints.deleteSession.url)
+    request.httpMethod = "DELETE"
+    var xsrfCookie: HTTPCookie? = nil
+    let sharedCookieStorage = HTTPCookieStorage.shared
+    for cookie in sharedCookieStorage.cookies! {
+      if cookie.name == "XSRF-TOKEN" { xsrfCookie = cookie }
+    }
+    if let xsrfCookie = xsrfCookie {
+      request.setValue(xsrfCookie.value, forHTTPHeaderField: "X-XSRF-TOKEN")
+    }
+
+    let session = URLSession.shared
+    let task = session.dataTask(with: request) { data, response, error in
+      if error != nil {
+        complation(false, error)
+        return
+      }
+      Auth.firstName = ""
+      Auth.lastName = ""
+      Auth.key = ""
+      Auth.session = ""
+
+      complation(true, nil)
+    }
+
+    task.resume()
   }
   
   class func taskForPOSTRequest<RequestType: Encodable, ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, body: RequestType, completion: @escaping (ResponseType?, Error?) -> Void){

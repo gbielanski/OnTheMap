@@ -25,7 +25,7 @@ class StudentListViewController: UIViewController {
     updateTable()
   }
 
-  private func setResfreshing(_ login: Bool){
+  private func setProcessing(_ login: Bool){
     if login {
       activityIndicator.startAnimating()
     }else{
@@ -33,13 +33,35 @@ class StudentListViewController: UIViewController {
     }
   }
 
+  @IBAction func logout(_ sender: Any) {
+    setProcessing(true)
+    UdacityClient.logout{
+      (result, error) in
+      DispatchQueue.main.async {
+        self.setProcessing(false)
+        if result {
+
+          self.dismiss(animated: true, completion: nil)
+        }else{
+          self.showFailure(message: error.debugDescription)
+        }
+      }
+    }
+  }
+  
+  private func showFailure(message: String) {
+    let alertVC = UIAlertController(title: "Logout Failed", message: message, preferredStyle: .alert)
+    alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+    present(alertVC, animated: true, completion: nil)
+  }
+
   private func updateTable(){
-    setResfreshing(true)
+    setProcessing(true)
     _ = UdacityClient.getStudentLocations { students, error in
       StudentModel.studentlist = students
 
       self.tableView.reloadData()
-      self.setResfreshing(false)
+      self.setProcessing(false)
     }
   }
 

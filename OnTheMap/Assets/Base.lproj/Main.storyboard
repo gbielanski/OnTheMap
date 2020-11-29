@@ -149,7 +149,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="On The Map" id="L93-Ma-62g">
                         <barButtonItem key="backBarButtonItem" title="Cancell" id="ea0-IH-4nw"/>
-                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="RtL-5O-LNd"/>
+                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="RtL-5O-LNd">
+                            <connections>
+                                <action selector="logout:" destination="Vcc-8c-GqG" id="cTb-kZ-GK3"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem image="icon_addpin" id="ty5-Ea-eH6" userLabel="Add">
                                 <connections>
@@ -238,7 +242,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="On The Map" id="KvG-rV-edU">
                         <barButtonItem key="backBarButtonItem" title="Cancell" id="ItA-SD-Qcw"/>
-                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="e1X-Af-HhT"/>
+                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="e1X-Af-HhT">
+                            <connections>
+                                <action selector="logout:" destination="jqF-XJ-082" id="A2O-Ay-XwJ"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem image="icon_addpin" id="QIw-w2-EWq" userLabel="Add">
                                 <connections>
