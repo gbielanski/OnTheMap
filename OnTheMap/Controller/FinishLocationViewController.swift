@@ -16,7 +16,7 @@ class FinishLocationViewController: UIViewController, MKMapViewDelegate {
   var link: String?
   
   @IBAction func finishButtonTapped(){
-    print("finish button tapped")
+    print("finish button tapped \(location) \(link)")
   }
   
   override func viewDidLoad() {

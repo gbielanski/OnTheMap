@@ -11,6 +11,7 @@ import MapKit
 class FindLocationViewController: UIViewController {
   
   var foundLocation: CLLocation?
+  var link: String?
   
   @IBOutlet weak var locationTextView: UITextField!
   @IBOutlet weak var linkTextView: UITextField!
@@ -28,7 +29,7 @@ class FindLocationViewController: UIViewController {
       return
     }
     
-    findLocation(location: location)
+    findLocation(location: location, link: link.withUrlSchema())
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -40,10 +41,11 @@ class FindLocationViewController: UIViewController {
     if segue.identifier == "finishLocation" {
       let finishVC = segue.destination as! FinishLocationViewController
       finishVC.location = foundLocation
+      finishVC.link = link
     }
   }
   
-  private func findLocation(location: String){
+  private func findLocation(location: String, link: String){
     setProcessing(true)
     CLGeocoder().geocodeAddressString(location) { (marker, error) in
       self.setProcessing(false)
@@ -58,6 +60,7 @@ class FindLocationViewController: UIViewController {
         
         if let location = location {
           self.foundLocation = location
+          self.link = link
           self.performSegue(withIdentifier: "finishLocation", sender: nil)
         } else {
           self.showFailure(message: "Please try again later.")
