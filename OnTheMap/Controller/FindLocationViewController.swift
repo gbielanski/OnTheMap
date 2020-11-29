@@ -14,6 +14,7 @@ class FindLocationViewController: UIViewController {
   
   @IBOutlet weak var locationTextView: UITextField!
   @IBOutlet weak var linkTextView: UITextField!
+  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   
   @IBAction func findLocationButtonTapped(){
     
@@ -21,10 +22,13 @@ class FindLocationViewController: UIViewController {
       self.showFailure(message: "Link cannot be empty")
       return
     }
-    
-    if let location = locationTextView.text {
-      findLocation(location: location)
+
+    guard let location = locationTextView.text, location.count > 0 else {
+      self.showFailure(message: "Link cannot be empty")
+      return
     }
+    
+    findLocation(location: location)
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -40,7 +44,9 @@ class FindLocationViewController: UIViewController {
   }
   
   private func findLocation(location: String){
+    setProcessing(true)
     CLGeocoder().geocodeAddressString(location) { (marker, error) in
+      self.setProcessing(false)
       if let error = error {
         self.showFailure(message: error.localizedDescription)
       } else {
@@ -65,5 +71,14 @@ class FindLocationViewController: UIViewController {
     alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
     present(alertVC, animated: true, completion: nil)
   }
-  
+
+  private func setProcessing(_ login: Bool){
+    DispatchQueue.main.async {
+      if login {
+        self.activityIndicator.startAnimating()
+      }else{
+        self.activityIndicator.stopAnimating()
+      }
+    }
+  }
 }

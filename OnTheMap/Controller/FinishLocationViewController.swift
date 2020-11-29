@@ -11,6 +11,7 @@ import MapKit
 
 class FinishLocationViewController: UIViewController, MKMapViewDelegate {
   @IBOutlet weak var mapView: MKMapView!
+  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   var location: CLLocation?
   var link: String?
   
@@ -54,7 +55,9 @@ class FinishLocationViewController: UIViewController, MKMapViewDelegate {
     let annotation = MKPointAnnotation()
     annotation.coordinate = location!.coordinate
     let geocoder = CLGeocoder()
+    setProcessing(true)
     geocoder.reverseGeocodeLocation (location!, completionHandler: { (placemarks, error) in
+      self.setProcessing(false)
       if let error = error {
         self.showFailure(message: error.localizedDescription)
         return
@@ -83,5 +86,15 @@ class FinishLocationViewController: UIViewController, MKMapViewDelegate {
     let alertVC = UIAlertController(title: "Finish Location Failed", message: message, preferredStyle: .alert)
     alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
     present(alertVC, animated: true, completion: nil)
+  }
+
+  private func setProcessing(_ login: Bool){
+    DispatchQueue.main.async {
+      if login {
+        self.activityIndicator.startAnimating()
+      }else{
+        self.activityIndicator.stopAnimating()
+      }
+    }
   }
 }

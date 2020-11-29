@@ -310,10 +310,17 @@
                                     <constraint firstAttribute="height" constant="140" id="9oj-ef-2S5"/>
                                 </constraints>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="oG7-1z-mLV">
+                                <rect key="frame" x="188.5" y="428" width="37" height="37"/>
+                                <color key="tintColor" name="PrimaryLight"/>
+                                <color key="color" name="PrimaryLight"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="BSt-nE-FPI" firstAttribute="top" secondItem="kdR-Dr-MHp" secondAttribute="top" constant="80" id="IqI-jK-sG0"/>
+                            <constraint firstItem="oG7-1z-mLV" firstAttribute="top" secondItem="gc4-hN-IoE" secondAttribute="bottom" constant="32" id="Q1A-JJ-U1e"/>
+                            <constraint firstItem="oG7-1z-mLV" firstAttribute="centerX" secondItem="kdR-Dr-MHp" secondAttribute="centerX" id="QiP-SY-ZM3"/>
                             <constraint firstItem="gc4-hN-IoE" firstAttribute="top" secondItem="BSt-nE-FPI" secondAttribute="bottom" constant="40" id="TZh-n5-7WO"/>
                             <constraint firstItem="gc4-hN-IoE" firstAttribute="leading" secondItem="kdR-Dr-MHp" secondAttribute="leading" constant="32" id="X28-sC-ocC"/>
                             <constraint firstItem="kdR-Dr-MHp" firstAttribute="trailing" secondItem="gc4-hN-IoE" secondAttribute="trailing" constant="32" id="XIL-c8-lws"/>
@@ -326,6 +333,7 @@
                         <barButtonItem key="backBarButtonItem" title="Cancell" id="ee7-P5-A9g"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="oG7-1z-mLV" id="FMi-yv-POx"/>
                         <outlet property="linkTextView" destination="N2o-z8-iaK" id="6NX-IU-APC"/>
                         <outlet property="locationTextView" destination="CtW-qW-Mwi" id="i80-5r-sdX"/>
                         <segue destination="eBE-pg-4pz" kind="show" identifier="finishLocation" id="1LW-iK-IPd"/>
@@ -361,12 +369,18 @@
                                     <action selector="finishButtonTapped" destination="eBE-pg-4pz" eventType="touchUpInside" id="NQg-Y1-DfL"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="jCh-q0-AKE">
+                                <rect key="frame" x="197" y="371" width="20" height="20"/>
+                                <color key="color" name="PrimaryLight"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="bXX-Tb-824" firstAttribute="trailing" secondItem="b5F-rU-Zi5" secondAttribute="trailing" constant="32" id="7mY-R5-xoz"/>
+                            <constraint firstItem="jCh-q0-AKE" firstAttribute="centerX" secondItem="bXX-Tb-824" secondAttribute="centerX" id="BPv-BM-lWo"/>
                             <constraint firstItem="bXX-Tb-824" firstAttribute="bottom" secondItem="5WB-oE-y7S" secondAttribute="bottom" id="IMJ-iw-wn7"/>
                             <constraint firstItem="b5F-rU-Zi5" firstAttribute="leading" secondItem="bXX-Tb-824" secondAttribute="leading" constant="32" id="Ki7-FM-GW9"/>
+                            <constraint firstItem="jCh-q0-AKE" firstAttribute="centerY" secondItem="bXX-Tb-824" secondAttribute="centerY" id="Muu-Om-wVW"/>
                             <constraint firstItem="5WB-oE-y7S" firstAttribute="top" secondItem="bXX-Tb-824" secondAttribute="top" id="SY5-Yz-zLq"/>
                             <constraint firstItem="bXX-Tb-824" firstAttribute="bottom" secondItem="b5F-rU-Zi5" secondAttribute="bottom" constant="32" id="Var-ZB-2SU"/>
                             <constraint firstItem="bXX-Tb-824" firstAttribute="trailing" secondItem="5WB-oE-y7S" secondAttribute="trailing" id="VuA-3J-NWM"/>
@@ -376,6 +390,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="OvL-TM-oQh"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="jCh-q0-AKE" id="hdc-5o-zsL"/>
                         <outlet property="mapView" destination="5WB-oE-y7S" id="eAv-5R-MtP"/>
                     </connections>
                 </viewController>
