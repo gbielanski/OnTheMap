@@ -12,6 +12,8 @@
 		E12A6CC52572D13F00DD506A /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12A6CC42572D13F00DD506A /* Auth.swift */; };
 		E12A6CC72572DF9500DD506A /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12A6CC62572DF9500DD506A /* UserProfile.swift */; };
 		E1507E0A256FEE9C0092B3C5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1507E09256FEE9C0092B3C5 /* MapViewController.swift */; };
+		E170AAD42574DBC7005953F3 /* StudentLocationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E170AAD32574DBC7005953F3 /* StudentLocationRequest.swift */; };
+		E170AAD62574DEDD005953F3 /* PostStudentLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E170AAD52574DEDD005953F3 /* PostStudentLocationResponse.swift */; };
 		E171F307256E438D00C9909E /* StudentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E171F306256E438D00C9909E /* StudentListViewController.swift */; };
 		E199027A256BA5550057931C /* UdacityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1990279256BA5550057931C /* UdacityClient.swift */; };
 		E1990283256BAFF20057931C /* UdacityErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1990282256BAFF20057931C /* UdacityErrorResponse.swift */; };
@@ -45,6 +47,8 @@
 		E12A6CC42572D13F00DD506A /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		E12A6CC62572DF9500DD506A /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		E1507E09256FEE9C0092B3C5 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		E170AAD32574DBC7005953F3 /* StudentLocationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocationRequest.swift; sourceTree = "<group>"; };
+		E170AAD52574DEDD005953F3 /* PostStudentLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStudentLocationResponse.swift; sourceTree = "<group>"; };
 		E171F306256E438D00C9909E /* StudentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListViewController.swift; sourceTree = "<group>"; };
 		E1990279256BA5550057931C /* UdacityClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityClient.swift; sourceTree = "<group>"; };
 		E1990282256BAFF20057931C /* UdacityErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityErrorResponse.swift; sourceTree = "<group>"; };
@@ -122,7 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				E1990284256BB2EF0057931C /* RequestSessionId.swift */,
-				E102D52D256D7F1A0037CB06 /* StudentLocationsResponse.swift */,
+				E170AAD32574DBC7005953F3 /* StudentLocationRequest.swift */,
 			);
 			path = UdacityRequests;
 			sourceTree = "<group>";
@@ -133,6 +137,8 @@
 				E1990282256BAFF20057931C /* UdacityErrorResponse.swift */,
 				E1990286256BB51E0057931C /* SessionResponse.swift */,
 				E12A6CC62572DF9500DD506A /* UserProfile.swift */,
+				E102D52D256D7F1A0037CB06 /* StudentLocationsResponse.swift */,
+				E170AAD52574DEDD005953F3 /* PostStudentLocationResponse.swift */,
 			);
 			path = UdacityResponses;
 			sourceTree = "<group>";
@@ -296,8 +302,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E170AAD42574DBC7005953F3 /* StudentLocationRequest.swift in Sources */,
 				E1EEED57257192C300D90ADA /* FindLocationViewController.swift in Sources */,
 				E1507E0A256FEE9C0092B3C5 /* MapViewController.swift in Sources */,
+				E170AAD62574DEDD005953F3 /* PostStudentLocationResponse.swift in Sources */,
 				E12A6CC72572DF9500DD506A /* UserProfile.swift in Sources */,
 				E199027A256BA5550057931C /* UdacityClient.swift in Sources */,
 				E171F307256E438D00C9909E /* StudentListViewController.swift in Sources */,

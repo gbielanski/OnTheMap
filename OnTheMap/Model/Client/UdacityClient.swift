@@ -17,12 +17,14 @@ class UdacityClient{
     case getStudentDetails(String)
     case getStudentLocations
     case deleteSession
+    case postStudentLocation
 
     var stringValue : String {
       switch self {
       case .createSessionId, .deleteSession: return Endpoints.base + "/session"
       case .getStudentDetails(let key): return Endpoints.base + "/users/\(key)"
       case .getStudentLocations: return Endpoints.base + "/StudentLocation?limit=100&order=-updatedAt"
+      case .postStudentLocation: return Endpoints.base + "/StudentLocation"
       }
     }
     
@@ -52,6 +54,17 @@ class UdacityClient{
         completion(true, nil)
       }else{
         completion(false, error)
+      }
+    }
+  }
+
+  class func postStudentLocations(body: StudentLocationRequest, completion: @escaping (Bool, Error?) -> Void) {
+    taskForPOSTRequest(url: Endpoints.postStudentLocation.url, responseType: PostStudentLocationResponse.self, body: body){ (response, error)
+      in
+      if let error = error {
+        completion(false, error)
+      }else{
+        completion(true, nil)
       }
     }
   }
@@ -106,8 +119,16 @@ class UdacityClient{
     request.httpMethod = "POST"
     
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-    request.addValue("application/json", forHTTPHeaderField: "Accept")
+    if (!(responseType is PostStudentLocationResponse.Type)){
+      request.addValue("application/json", forHTTPHeaderField: "Accept")
+    }
+
     request.httpBody = try! JSONEncoder().encode(body)
+
+    if ((responseType is PostStudentLocationResponse.Type)){
+      print(String(data: request.httpBody!, encoding: .utf8)!)
+    }
+
     let task = URLSession.shared.dataTask(with: request) {
       (data, response, error) in
       guard let data = data else {
@@ -116,10 +137,14 @@ class UdacityClient{
         }
         return
       }
-      
-      let range = 5..<data.count
-      let newData = data.subdata(in: range)
 
+      var newData = data
+      if (!(responseType is PostStudentLocationResponse.Type)){
+        let range = 5..<data.count
+        newData = data.subdata(in: range)
+      }
+
+      print(String(data: newData, encoding: .utf8)!)
       let decoder = JSONDecoder()
       
       do {

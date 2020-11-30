@@ -14,9 +14,29 @@ class FinishLocationViewController: UIViewController, MKMapViewDelegate {
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   var location: CLLocation?
   var link: String?
-  
+  var mapString: String?
+
   @IBAction func finishButtonTapped(){
-    print("finish button tapped \(location) \(link)")
+    let body = StudentLocationRequest(
+      uniqueKey: Auth.key,
+      firstName: Auth.firstName,
+      lastName: Auth.lastName,
+      mapString: self.mapString ?? "",
+      mediaURL: self.link ?? "",
+      latitude: location?.coordinate.latitude ?? 0.0,
+      longitude: location?.coordinate.longitude ?? 0.0
+    )
+
+    setProcessing(true)
+    UdacityClient.postStudentLocations(body: body){
+      (success, error) in
+      self.setProcessing(false)
+      if let error = error {
+        DispatchQueue.main.async {
+          self.showFailure(message: error.localizedDescription)
+        }
+      }
+    }
   }
   
   override func viewDidLoad() {
@@ -69,8 +89,9 @@ class FinishLocationViewController: UIViewController, MKMapViewDelegate {
         self.showFailure(message: "Cannot find location to show")
         return
       }
-      
-      annotation.title = "\(firstLocation?.subLocality?.description ?? "Unknown"), \(firstLocation?.administrativeArea?.description ?? "Unknown"), \(firstLocation?.isoCountryCode! ?? "Unknown")"
+
+      self.mapString = "\(firstLocation?.subLocality?.description ?? "Unknown"), \(firstLocation?.administrativeArea?.description ?? "Unknown"), \(firstLocation?.isoCountryCode! ?? "Unknown")"
+      annotation.title = self.mapString
       annotations.append(annotation)
       self.mapView.addAnnotations(annotations)
     })
