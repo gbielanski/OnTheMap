@@ -392,9 +392,11 @@
                     <connections>
                         <outlet property="activityIndicator" destination="jCh-q0-AKE" id="hdc-5o-zsL"/>
                         <outlet property="mapView" destination="5WB-oE-y7S" id="eAv-5R-MtP"/>
+                        <segue destination="Azc-u9-kWx" kind="unwind" identifier="unwind" unwindAction="myUnwindActionWithSegue:" id="vH9-nv-6Og"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UHC-4T-LSx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Azc-u9-kWx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4367" y="57"/>
         </scene>

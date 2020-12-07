@@ -36,6 +36,7 @@ class FinishLocationViewController: UIViewController, MKMapViewDelegate {
           self.showFailure(message: error.localizedDescription)
         }
       }
+      self.performSegue(withIdentifier: "unwind", sender: nil)
     }
   }
   

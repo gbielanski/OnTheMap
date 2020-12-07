@@ -12,9 +12,15 @@ import MapKit
 class MapViewController: UIViewController, MKMapViewDelegate {
   @IBOutlet weak var mapView: MKMapView!
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+
+  @IBAction func myUnwindAction(segue: UIStoryboardSegue) {}
   
   override func viewDidLoad() {
     super.viewDidLoad()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
     setProcessing(true)
     _ = UdacityClient.getStudentLocations { students, error in
       self.setProcessing(false)
@@ -26,10 +32,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
       self.updateMap()
       self.centerMap()
     }
-  }
-  
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
     self.tabBarController?.tabBar.isHidden = false
   }
   
