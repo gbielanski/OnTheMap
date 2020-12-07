@@ -40,7 +40,6 @@ class StudentListViewController: UIViewController {
       DispatchQueue.main.async {
         self.setProcessing(false)
         if result {
-
           self.dismiss(animated: true, completion: nil)
         }else{
           self.showFailure(message: error.debugDescription)

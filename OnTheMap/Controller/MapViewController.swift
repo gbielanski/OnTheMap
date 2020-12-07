@@ -15,7 +15,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    setProcessing(true)
     _ = UdacityClient.getStudentLocations { students, error in
+      self.setProcessing(false)
+      guard error == nil else {
+        self.showFailure(message: "Could not get students list")
+        return
+      }
       StudentModel.studentlist = students
       self.updateMap()
       self.centerMap()
@@ -28,12 +34,14 @@ class MapViewController: UIViewController, MKMapViewDelegate {
   }
   
   private func centerMap() {
-    let centerLocation = CLLocation(
-      latitude: CLLocationDegrees(StudentModel.studentlist[0].latitude),
-      longitude: CLLocationDegrees(StudentModel.studentlist[0].longitude))
-    let span = MKCoordinateSpan(latitudeDelta: 50.0, longitudeDelta: 50.0)
-    let region = MKCoordinateRegion(center: centerLocation.coordinate, span: span)
-    mapView.setRegion(region, animated: false)
+    if StudentModel.studentlist.count > 0 {
+      let centerLocation = CLLocation(
+        latitude: CLLocationDegrees(StudentModel.studentlist[0].latitude),
+        longitude: CLLocationDegrees(StudentModel.studentlist[0].longitude))
+      let span = MKCoordinateSpan(latitudeDelta: 50.0, longitudeDelta: 50.0)
+      let region = MKCoordinateRegion(center: centerLocation.coordinate, span: span)
+      mapView.setRegion(region, animated: false)
+    }
   }
   
   func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -95,10 +103,12 @@ class MapViewController: UIViewController, MKMapViewDelegate {
   }
   
   private func setProcessing(_ login: Bool){
-    if login {
-      activityIndicator.startAnimating()
-    }else{
-      activityIndicator.stopAnimating()
+    DispatchQueue.main.async {
+      if login {
+        self.activityIndicator.startAnimating()
+      }else{
+        self.activityIndicator.stopAnimating()
+      }
     }
   }
   
