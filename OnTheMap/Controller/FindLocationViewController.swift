@@ -16,7 +16,6 @@ class FindLocationViewController: UIViewController {
   @IBOutlet weak var locationTextView: UITextField!
   @IBOutlet weak var linkTextView: UITextField!
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-  
   @IBAction func findLocationButtonTapped(){
     
     guard let link = linkTextView.text, link.count > 0 else {
@@ -36,7 +35,7 @@ class FindLocationViewController: UIViewController {
     super.viewWillAppear(animated)
     self.tabBarController?.tabBar.isHidden = true
   }
-  
+
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "finishLocation" {
       let finishVC = segue.destination as! FinishLocationViewController

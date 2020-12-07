@@ -89,7 +89,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="wGH-t9-Jaj" id="swF-MP-Its"/>
                         <outlet property="emailTextField" destination="rpd-FU-coB" id="ZBw-gq-lMJ"/>
-                        <outlet property="loginButton" destination="DGe-0h-IDp" id="PgB-Im-ndG"/>
+                        <outlet property="loginButton" destination="DGe-0h-IDp" id="YPt-PA-sna"/>
                         <outlet property="passwordTextField" destination="HeA-aR-2bo" id="F9p-Qv-Fjf"/>
                         <outlet property="textView" destination="Dfa-GU-zu4" id="nnR-Bz-aOV"/>
                         <segue destination="Agd-c0-orQ" kind="show" identifier="completeLogin" id="2Ne-dg-TpC"/>
@@ -278,13 +278,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_world" translatesAutoresizingMaskIntoConstraints="NO" id="BSt-nE-FPI">
-                                <rect key="frame" x="0.0" y="136" width="414" height="80"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="6KW-Nd-idB"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gc4-hN-IoE">
-                                <rect key="frame" x="32" y="256" width="350" height="140"/>
+                                <rect key="frame" x="32" y="168" width="350" height="140"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CtW-qW-Mwi">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="41.5"/>
@@ -311,17 +311,17 @@
                                 </constraints>
                             </stackView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="oG7-1z-mLV">
-                                <rect key="frame" x="188.5" y="428" width="37" height="37"/>
+                                <rect key="frame" x="188.5" y="340" width="37" height="37"/>
                                 <color key="tintColor" name="PrimaryLight"/>
                                 <color key="color" name="PrimaryLight"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="BSt-nE-FPI" firstAttribute="top" secondItem="kdR-Dr-MHp" secondAttribute="top" constant="80" id="IqI-jK-sG0"/>
+                            <constraint firstItem="BSt-nE-FPI" firstAttribute="top" secondItem="kdR-Dr-MHp" secondAttribute="top" constant="16" id="IqI-jK-sG0"/>
                             <constraint firstItem="oG7-1z-mLV" firstAttribute="top" secondItem="gc4-hN-IoE" secondAttribute="bottom" constant="32" id="Q1A-JJ-U1e"/>
                             <constraint firstItem="oG7-1z-mLV" firstAttribute="centerX" secondItem="kdR-Dr-MHp" secondAttribute="centerX" id="QiP-SY-ZM3"/>
-                            <constraint firstItem="gc4-hN-IoE" firstAttribute="top" secondItem="BSt-nE-FPI" secondAttribute="bottom" constant="40" id="TZh-n5-7WO"/>
+                            <constraint firstItem="gc4-hN-IoE" firstAttribute="top" secondItem="BSt-nE-FPI" secondAttribute="bottom" constant="16" id="TZh-n5-7WO"/>
                             <constraint firstItem="gc4-hN-IoE" firstAttribute="leading" secondItem="kdR-Dr-MHp" secondAttribute="leading" constant="32" id="X28-sC-ocC"/>
                             <constraint firstItem="kdR-Dr-MHp" firstAttribute="trailing" secondItem="gc4-hN-IoE" secondAttribute="trailing" constant="32" id="XIL-c8-lws"/>
                             <constraint firstItem="BSt-nE-FPI" firstAttribute="leading" secondItem="kdR-Dr-MHp" secondAttribute="leading" id="YsC-Ap-suL"/>

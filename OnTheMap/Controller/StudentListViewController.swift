@@ -63,7 +63,6 @@ class StudentListViewController: UIViewController {
       self.setProcessing(false)
     }
   }
-
 }
 
 extension StudentListViewController: UITableViewDataSource, UITableViewDelegate {
